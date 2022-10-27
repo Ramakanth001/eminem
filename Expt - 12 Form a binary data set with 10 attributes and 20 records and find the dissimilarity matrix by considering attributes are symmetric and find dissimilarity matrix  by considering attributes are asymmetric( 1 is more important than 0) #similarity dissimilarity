@@ -1,0 +1,25 @@
+#12.Form a binary data set with 10 attributes and 20 records and find the dissimilarity matrix by considering attributes are symmetric and find   
+#dissimilarity matrix  by considering attributes are asymmetric( 1 is more important than 0)
+#similarity dissimilarity
+a = [0, 1, 1, 0]
+b = [1, 1, 1, 0]
+#p=[i for i, j in zip(a, b) if i==0 and j==0]#
+#print(p)
+def jaccard_similarity(A, B):
+    #Find intersection of two sets
+    #nominator = A.intersection(B)
+    q=len([i for i, j in zip(a, b) if i==1 and j==1])
+    r=len([i for i, j in zip(a, b) if i==1 and j==0])
+    s=len([i for i, j in zip(a, b) if i==0 and j==1])
+    t=len([i for i, j in zip(a, b) if i==0 and j==0])
+    #print(q,r,s,t)
+    disim_symmetric=(r+s)/(q+r+s+t)
+    sim_asym=(q)/(q+r+s)
+    print("disim_symmetric",disim_symmetric)
+    print("disim_asym",1-sim_asym)
+    #Find union of two sets
+    #denominator = A.union(B)
+    #Take the ratio of sizes
+    #similarity = len(nominator)/len(denominator)
+    #return similarity
+jaccard_similarity(a, b)
