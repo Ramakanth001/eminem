@@ -1,0 +1,33 @@
+# 3 mean median and standard deviation of iris data
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+data = pd.read_csv("iris.csv")
+#sepallength
+sum_data = data["sepal.length"].sum()
+mean_data = data["sepal.length"].mean()
+median_data = data["sepal.length"].median()  
+std=data["sepal.length"].std()
+print("Sepal Length:\n Sum:",sum_data, "\nMean:", mean_data, "\nMedian:",median_data,"\nStandardDeviation:",std)
+print()
+#sepal. width
+sum_data = data["sepal.width"].sum()
+mean_data = data["sepal.width"].mean()
+median_data = data["sepal.width"].median() 
+std=data["sepal.width"].std()
+print("Sepal Width:\n Sum:",sum_data, "\nMean:", mean_data, "\nMedian:",median_data,"\nStandardDeviation:",std)
+print()
+#petal length
+sum_data = data["petal.length"].sum()
+mean_data = data["petal.length"].mean()
+median_data = data["petal.length"].median() 
+std=data["sepal.width"].std() 
+print("Petal Length:\n Sum:",sum_data, "\nMean:", mean_data, "\nMedian:",median_data,"\nStandardDeviation:",std)
+print()
+#petal width
+sum_data = data["petal.width"].sum()
+mean_data = data["petal.width"].mean()
+median_data = data["petal.width"].median()
+std=data["sepal.width"].std()
+  
+print("Petal Width:\n Sum:",sum_data, "\nMean:", mean_data, "\nMedian:",median_data,"\nStandardDeviation:",std)
