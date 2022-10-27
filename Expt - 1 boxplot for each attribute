@@ -1,0 +1,23 @@
+# 1 boxplot for each attribute
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+data = pd.read_csv("iris.csv")
+#print (data.head(10))
+new_data = data[["sepal.length", "sepal.width", "petal.length", "petal.width"]]
+#print(new_data.head())
+plt.figure(figsize = (10, 7))
+new_data.boxplot()
+# below one is not necessary
+sns.set(style="ticks", palette="pastel")
+f, axes = plt.subplots(2, 2, sharey=False, figsize=(12, 8))
+#f, axes = plt.subplots(2, 2, sharey=False, figsize=(12, 8))
+sns.boxplot(x="variety", y="petal.length",data=data, ax = axes[0,0])
+sns.boxplot(x="variety", y="sepal.length", data=data, ax=axes[0,1])
+sns.boxplot(x="variety", y="petal.width",hue = "variety",data=data, ax=axes[1,0])
+sns.boxplot(x="variety", y="sepal.width", data=data, ax=axes[1,1])
+# adding a title to the plot
+f.suptitle("Boxplot of the Petal and Sepal measurements by Iris plant Species")
+plt.show()
+
