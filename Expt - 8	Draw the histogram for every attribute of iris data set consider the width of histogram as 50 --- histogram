@@ -1,0 +1,36 @@
+# 8	Draw the histogram for every attribute of iris data set consider the width of histogram as 50
+#histogram
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = pd.read_csv("iris.csv")
+
+plt.figure(figsize = (50, 12))
+x = data["sepal.length"]
+  
+plt.hist(x, bins = 20, color = "blue")
+plt.title("Sepal Length ")
+plt.xlabel("Sepal_Length")
+plt.ylabel("Count")
+
+plt.figure(figsize = (50, 12))
+y = data["sepal.width"]  
+plt.hist(y, bins = 20, color = "green")
+plt.title("Sepal Width ")
+plt.xlabel("Sepal_Width")
+plt.ylabel("Count")
+
+plt.figure(figsize = (50, 12))
+z= data["petal.length"] 
+plt.hist(z, bins = 20, color = "red")
+plt.title("Petal Length ")
+plt.xlabel("Petal_Length")
+plt.ylabel("Count")
+
+plt.figure(figsize = (50, 12))
+q = data["petal.width"]  
+plt.hist(q, bins = 20, color = "yellow")
+plt.title("Petal Width ")
+plt.xlabel("Petal_Width")
+plt.ylabel("Count")
