@@ -1,0 +1,22 @@
+# 4  and 5 the scatter plot for each pair of attributes of iris data set
+# correlation coefficient for every pair attribute of iris data set
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+data = pd.read_csv("iris.csv")
+sns.FacetGrid(data,hue="variety")\
+.map(plt.scatter,"sepal.length","sepal.width")\
+.add_legend()
+plt.show()
+sns.FacetGrid(data,hue="variety")\
+.map(plt.scatter,"petal.length","petal.width")\
+.add_legend()
+plt.show()
+#correlation coefficients between measurement variables:
+
+data.groupby("variety").corr()
+
+#qqnorm(data["petal.length"])  #q-q plot for petal length
+#qqline(data["petal.length"])
