@@ -1,0 +1,13 @@
+# 2 data distribution curve for each attribute of iris data set and check whether 
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+col=['sepal.length','sepal.width','petal.length','petal.width','variety']
+iris=pd.read_csv("iris.csv",names=col)
+f, axes = plt.subplots(2, 2, figsize=(7, 7), sharex=True)
+
+sns.distplot( iris["sepal.length"][1:] , color="red", ax=axes[0, 0])
+sns.distplot( iris["sepal.width"][1:] , color="pink", ax=axes[0, 1])
+sns.distplot( iris["petal.length"][1:] , color="grey", ax=axes[1, 0])
+sns.distplot( iris["petal.width"][1:] , color="blue", ax=axes[1, 1])
