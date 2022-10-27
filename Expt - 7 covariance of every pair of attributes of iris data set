@@ -1,0 +1,7 @@
+#  7 covariance of every pair of attributes of iris data set
+#covariance matrix
+from sklearn import datasets    
+import numpy as np    
+iris = datasets.load_iris()
+cov_data = np.corrcoef(iris.data.T)
+print(cov_data)
