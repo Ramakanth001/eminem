@@ -1,0 +1,33 @@
+#10.	Construct dissimilarity matrix for weather nominal data set
+#Dissimilarity matrix for weather 
+import csv
+import math
+A=[]
+with open('weather.nominal.csv',newline='') as csvfile:
+  for row in csv.reader(csvfile):
+    A.append(row)
+  t=[]
+  for i in A:
+    t.append(i[:-1])
+  t.pop(0)
+  col=len(t[0])
+
+  res=[]
+  for i in range(0,len(t)):
+    temp=[]
+    for j in range(0,i+1):
+      m=0
+      if i==j:
+        temp.append(0)
+        continue
+      for k in range(col):
+        if t[i][k]==t[j][k]:
+          m=m+1
+      h=(col-m)/col
+      temp.append(round(h,2))
+    res.append(temp)
+  for i in res:
+    print(i)
+      
+
+
