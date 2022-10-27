@@ -1,0 +1,39 @@
+# exp 9 Euclidian and manhattan
+import csv
+import math
+A=[]
+with open('iris.csv',newline='') as csvfile:
+  for row in csv.reader(csvfile):
+    A.append(row)
+  t=[]
+  for i in A:
+    t.append(i[:-1])
+  t.pop(0)
+  print(len(t))
+  res=[]
+  res1=[]
+  for i in range(0,len(t)):
+    temp=[]
+    temp1=[]
+    for j in range(0,i+1):
+      if i==j:
+        temp.append(0)
+        temp1.append(0)
+      else:
+
+        sum1=(float(t[i][0])-float(t[j][0]))**2+(float(t[i][1])-float(t[j][1]))**2+(float(t[i][2])-float(t[j][2]))**2+(float(t[i][3])-float(t[j][3]))**2
+        sum2=abs(float(t[i][0])-float(t[j][0]))+abs(float(t[i][1])-float(t[j][1]))+abs(float(t[i][2])-float(t[j][2]))+abs(float(t[i][3])-float(t[j][3]))
+        p=math.sqrt(sum1)
+        #p=float("{:.2f}".format(p))
+        p=round(p,2)
+        temp.append(p)
+        p1=round(sum1,2)
+        temp1.append(p1)
+    res.append(temp)
+    res1.append(temp1)
+  print("Euclidian matrix")
+  for i in res:
+    print(i)
+  print("Manhattan matrix")
+  for j in res1:
+    print(j)
